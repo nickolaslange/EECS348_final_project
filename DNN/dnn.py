@@ -93,6 +93,8 @@ while(1):
 		if count%4 == 0:
 			#Your code here.
 			ser = serial.Serial("/dev/ttyAMA1", 115200)
+			deg = int(deg)
+			deg = str(deg) + "\n"
 			ser.write(bytes(deg))
 		
 		pred_end   = time.time()
