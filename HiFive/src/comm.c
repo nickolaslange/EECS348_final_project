@@ -57,7 +57,7 @@ int read_from_pi(int devid)
     ser_setup(1);
 
     printf("Setup completed.\n");
-    printf("Begin the main loop.\n);
+    printf("Begin the main loop.\n");
 
     while (1) {
         if (ser_read(1)) {
