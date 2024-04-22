@@ -56,16 +56,20 @@ int read_from_pi(int devid)
     ser_setup(0);
     ser_setup(1);
 
+    
     printf("Setup completed.\n");
     printf("Begin the main loop.\n");
 
-    while (1) {
-        if (ser_read(1)) {
-            char buffer[10];
-            int value, read_data;
-            read_data = ser_readline(1, 10, buffer);
-            printf("From PI to HIFIVE: read(%d) => %s \n", read_data, buffer);
-}
+    int read_data;
+    
+    if (ser_read(1)) {
+        
+        char buffer[10];
+        read_data = ser_readline(1, 10, buffer);
+        printf("From PI to HIFIVE: read(%d) => %s \n", read_data, buffer);
+    }
+
+    return read_data;
 
 void steering(int gpio, int pos)
 {
